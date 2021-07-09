@@ -368,6 +368,8 @@ class Dialogs extends Component {
     };
 
     handleSelectMessage = (chatId, messageId, openSearch) => {
+        // console.log('handleSelectMessage');
+        // this will open the chat history (all chats) on the right panel whenever the user will click on one chat from the list of chats from left panel.
         openChat(chatId, messageId);
 
         const searchChatId = openSearch ? this.state.searchChatId : 0;
@@ -449,8 +451,10 @@ class Dialogs extends Component {
             <>
                 <div className='dialogs'>
                     <div className='sidebar-page'>
+                    {/* This includes the hambuger, and search option. View is at top left panel (Hint: Hamburger and Magnifying glass.) */}
                         <DialogsHeader
                             ref={this.dialogsHeaderRef}
+                            // OpenSearch state manages
                             openSearch={openSearch}
                             timeout={timeout !== 0}
                             onClick={this.handleHeaderClick}

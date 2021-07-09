@@ -295,6 +295,7 @@ class Dialog extends Component {
             <ListItem
                 button
                 className={classNames('dialog', { 'item-selected': isSelected }, { 'dialog-hidden': hidden })}
+                // When clicking on the left side bar's chat main list it will show the chats of the two users on the right panel.
                 onMouseDown={this.handleSelect}
                 onContextMenu={this.handleContextMenu}
                 style={style}

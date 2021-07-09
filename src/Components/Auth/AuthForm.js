@@ -41,18 +41,22 @@ class AuthForm extends React.Component {
     };
 
     render() {
+        // This page is for the login purpose.
         const { authorizationState: state, onChangePhone, onRequestQRCode } = this.props;
         const { data } = this.state;
         const { defaultPhone } = AppStore;
 
         let control = null;
+        console.log('inside AuthForm, ', state['@type']);
         switch (state['@type']) {
             case 'authorizationStateWaitOtherDeviceConfirmation': {
                 control = (
+                    // Whenever the user clicks on the QR Code option, then this will be returned.
                     <QRCode
                         state={state}
                         onChangePhone={onChangePhone}
-                    />);
+                    />
+                    );
                 break;
             }
             case 'authorizationStateWaitPhoneNumber':
@@ -61,6 +65,7 @@ class AuthForm extends React.Component {
             case 'authorizationStateWaitTdlibParameters':
             case 'authorizationStateWaitTdlib': {
                 control = (
+                    // By default this will be returned and it will have two input fields such as country code and phone number.
                     <Phone
                         defaultPhone={defaultPhone}
                         data={data}

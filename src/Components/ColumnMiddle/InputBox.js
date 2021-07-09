@@ -1895,6 +1895,7 @@ class InputBox extends Component {
                             </div>
                             <div className='inputbox-middle-column'>
                                 <div
+                                // This is the input field for the chat for right panel.
                                     id='inputbox-message'
                                     className='scrollbars-hidden'
                                     ref={this.newMessageRef}

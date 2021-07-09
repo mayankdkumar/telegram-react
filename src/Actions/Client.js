@@ -136,6 +136,7 @@ export function openUser(userId, popup = false) {
 
 export function openChat(chatId, messageId = null, popup = false, options = null) {
     const { chatSelectOptions } = AppStore;
+    // console.log('chatSelectOptions>>>' , chatSelectOptions);
     if (chatSelectOptions) {
         const { switchInline, botStartMessage } = chatSelectOptions;
 

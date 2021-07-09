@@ -29,8 +29,13 @@ class EventEmitter {
     }
 
     emit(event, ...args) {
+        // This will be invoked for the updates in the events.
         if (this.observers[event]) {
             const cloned = [].concat(this.observers[event]);
+            if(event === 'clientUpdate'){
+                // console.log('cloned ', event,' ', ...args);
+            }
+            // console.log('cloned ', event,' ', ...args);
             cloned.forEach(observer => {
                 observer(...args);
             });
@@ -38,6 +43,9 @@ class EventEmitter {
 
         if (this.observers['*']) {
             const cloned = [].concat(this.observers['*']);
+            if(event === 'clientUpdate'){
+                console.log('cloned 1:', event,' ', ...args);
+            }
             cloned.forEach(observer => {
                 observer.apply(observer, [event, ...args]);
             });

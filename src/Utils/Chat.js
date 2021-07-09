@@ -588,6 +588,7 @@ function showChatUnreadMentionCount(chatId) {
 
 function showChatUnreadCount(chatId) {
     const chat = ChatStore.get(chatId);
+    // console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>chat: ', chat);
     if (!chat) return false;
 
     const { is_marked_as_unread, unread_count, unread_mention_count } = chat;
@@ -1089,7 +1090,8 @@ function getChatTitle(chatId, showSavedMessages = false) {
     if (isMeChat(chatId) && showSavedMessages) {
         return LStore.i18n.t('SavedMessages');
     }
-
+    // This give the title of the channel or a group which appears at the top header. 
+    console.log('chat title, ', chat);
     return chat.title || LStore.i18n.t('HiddenName');
 }
 

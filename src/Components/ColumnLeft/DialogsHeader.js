@@ -92,6 +92,7 @@ class DialogsHeader extends React.Component {
     };
 
     handleSearchTextChange = () => {
+        console.log('handle search text change');
         const { onSearchTextChange } = this.props;
 
         const element = this.searchInputRef.current;
@@ -124,6 +125,7 @@ class DialogsHeader extends React.Component {
             content = (
                 <SearchInput
                     inputRef={this.searchInputRef}
+                    // Whenever the user types in the searchbar, then this onChange function will be invoked.
                     onChange={this.handleSearchTextChange}
                     onClose={this.handleCloseSearch}
                 />

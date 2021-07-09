@@ -94,8 +94,9 @@ class DialogContent extends React.Component {
         const { chatId, t } = this.props;
 
         if (this.clearHistory) return <div className='dialog-content'>{'\u00A0'}</div>;
-
+        // This will return the chat object which contains text(user's name), last message, user's id, etc.
         const chat = ChatStore.get(chatId);
+        // console.log('chat:=> ', chat);
         if (!chat) return <div className='dialog-content'>{'\u00A0'}</div>;
 
         let contentControl = null;

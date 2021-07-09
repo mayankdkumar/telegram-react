@@ -168,11 +168,13 @@ class TdLibController extends EventEmitter {
     };
 
     send = request => {
+        // Whenever the request is supposed to be send to telegram library, this function will be called or invoked.
+        // console.log('send function invoked');
         if (!this.client) {
             console.log('send (none init)', request);
             return Promise.reject('tdweb client is not ready yet');
         }
-
+        // console.log('send function invoked 1, ', request);
         if (!this.disableLog) {
             console.log('send', request);
 
@@ -188,6 +190,8 @@ class TdLibController extends EventEmitter {
                     throw error;
                 });
         } else {
+            // if the client object is not undefined, this block will be executed.
+            // console.log('send function invoked 2 ', request);
             return this.client.send(request);
         }
     };

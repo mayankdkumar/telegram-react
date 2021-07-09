@@ -474,6 +474,8 @@ class ChatStore extends EventEmitter {
     }
 
     get(chatId) {
+        // It is storing the chat object which has saveral details such as title of the group or channel, etc.
+        // console.log('this.items, ', this.items);
         return this.items.get(chatId);
     }
 

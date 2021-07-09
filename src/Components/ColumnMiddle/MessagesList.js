@@ -710,10 +710,11 @@ class MessagesList extends React.Component {
     }
 
     viewMessages(messages) {
+        // When the user view message.
         if (!messages) return;
         if (messages.length === 0) return;
         if (!messages[0].chat_id) return;
-
+// console.log('message.length, ', messages);
         const viewAction = () => {
             TdLibController.send({
                 '@type': 'viewMessages',

@@ -475,6 +475,7 @@ class DialogsList extends React.Component {
                     lastPinnedId = x;
                 }
             });
+            // This gives the data before the chats are loaded from the telegram db as it works as a cache.
             this.source = cacheItems.map(x => x.id);
         } else {
             if (chatList['@type'] === 'chatListMain') {
